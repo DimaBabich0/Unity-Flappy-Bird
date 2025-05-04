@@ -28,7 +28,6 @@ public class BackgroundScript : MonoBehaviour
 
         if (this.transform.position.x <= endPosition)
         {
-            Debug.Log("Background reset");
             this.transform.position = startPosition;
         }
     }
