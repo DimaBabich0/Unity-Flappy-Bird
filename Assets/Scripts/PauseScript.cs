@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseScript : MonoBehaviour
 {
     private GameObject content;
+    private float startScale;
 
     void Start()
     {
@@ -18,10 +19,11 @@ public class PauseScript : MonoBehaviour
             if (content.activeInHierarchy)
             {
                 content.SetActive(false);
-                Time.timeScale = 1.0f;
+                Time.timeScale = startScale;
             }
             else
             {
+                startScale = Time.timeScale;
                 content.SetActive(true);
                 Time.timeScale = 0.0f;
             }
